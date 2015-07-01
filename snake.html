@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Snake</title>
+
+<link rel="stylesheet" type="text/css" href="snake.css" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script type="text/javascript", src="snake.js">  </script> 
+
+</head>
+
+<body>
+
+
+<div id="divGameboard">
+	<canvas id="gameboard" width="1220" height= "420" ></canvas>
+</div>
+
+<div id="container" >
+	<div id="infoObject" > </div>
+
+</div>
+<a href="snakeInstructions.html" id="buttonLook" target="_blank">INSTRUCTIONS</a>	
+	
+<audio id="snakeSound" src="audio/snakeSound.m4a" preload="auto"></audio>
+<audio id="eggSound" src="audio/eggSound.m4a" preload="auto"></audio>
+<audio id="bugSound" src="audio/bugSound.m4a" preload="auto"></audio>
+<audio id="gameOverSound" src="audio/gameOverSound.m4a" preload="auto"></audio>
+
+<img hidden id="snakeObjL" src="images/snakeL.jpg" alt="snake head" height="10" width="10">
+<img hidden id="snakeObjR" src="images/snakeR.jpg" alt="snake head" height="10" width="10">
+<img hidden id="snakeObjD" src="images/snakeD.jpg" alt="snake head" height="10" width="10">
+<img hidden id="snakeObjU" src="images/snakeU.jpg" alt="snake head" height="10" width="10">
+<img hidden id="bugObj" src="images/bug.jpg" alt="bug head" height="10" width="10">
+<img hidden id="eggObj" src="images/egg.jpg" alt="egg head" height="10" width="10">
+
+
+
+</body>
+</html>
+
+
