@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Snake Instructions</title>
+<style type="text/css">
+<!--  SNAKE - using html canvas element and fill rect -->
+html {
+	height: 100%;
+	}
+body {
+ font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+ position:fixed;
+ font-size: large;
+}
+
+h1, h2 {
+ font-size:3em;
+ font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+header {text-align: center;
+	color: yellow;
+}
+
+#infoObject {
+				text-align: center;
+				float: left;
+				width: 50%;
+				color: yellow;
+				font-size:1.5em;
+			}
+#instructions { 
+				text-align: left;
+				float: right;
+				width: 75%;
+				color: yellow;
+				font-size:large;
+			}
+#buttonLook {
+   background-color: yellow;
+   text-align: right;
+}
+body {
+ background:url(images/grass.jpg);
+}
+ 
+</style>
+
+</head>
+
+<body>
+
+	<div id="instructions">
+
+	<strong>MOVING: </strong><br>
+	Snake starts out in center of board.<br>
+	Use arrow keys for movement  OR touch above, below, right or left of center of game board.<br> 
+	When snake goes off board, it appears on opposite side of board.<br><br>
+	<strong>SCORING: </strong><br>
+	Snake starts out with 60 energy units.<br>
+	Each move spends one energy unit.<br>
+	If snake gets to bug, it eats it and gains 25 energy units.  A new bug appears.<br>
+	If snake eats egg, it gains 15 energy units. A new egg appears.<br><br>
+	<strong>OVER: </strong><br>
+	Game is over when snake runs out of energy units or runs into itself.<br><br>
+	<strong>GOAL: </strong><br>
+	Try to get as many energy units as possible. <br><br> 
+	
+	</div>
+
+</body>
+</html>
+
+

@@ -4,8 +4,8 @@
 // -documentation
 // 
 //board constants and variables:
-var origx = 50;	// placement of board
-var origy = 50;
+var origx = 0;	// placement of board
+var origy = 0;
 var SMALLDISPLAY = 800;
 var windowWidth;
 
@@ -178,19 +178,19 @@ function testPosition(xx,yy) {
 }
 /* *******************************initialize game board **********************/
 function init() {
-
 	game_canvas = document.getElementById("gameboard");
-	windowWidth = $(window).width();
-	windowWidth = window.screen.availWidth;
-	/* window.alert("availWidth:" +  windowWidth); */
+	windowWidth = $(window).width(); /*iphone 4 = 980 */
 	if (windowWidth <= SMALLDISPLAY) {		/* test for small display and make gameboard full size*/
-		boardx = Math.floor(windowWidth/bpix);
-		boardy = Math.floor(($(window).height()-10)/bpix);
-		boardy = Math.floor((window.screen.availHeight-10)/bpix);
+		boardx = (Math.floor((windowWidth)/bpix)-1);
+		boardy = Math.floor(($(window).height()-30)/bpix);	/* -30 to allow for instruction link */
+		/*boardy = Math.floor((window.screen.availHeight-10)/bpix);   */
 		origx = origy = 0;
+		document.getElementById("infoObject").style.fontSize="small";
 	}
+
 	game_canvas.width =  boardx * bpix;		//note that game_canvas.width is different
 	game_canvas.height = boardy * bpix;		//  from game_canvas.style.width  !! which magnifies!!
+	//alert("width:" + windowWidth + "boardx: " + boardx + ",gc.width" + game_canvas.width);
 	//If you want to have the visual size be the same as the pixel size, 
 	//never set the styles, only the attributes. 
 	game_canvas.style.top =  origy + "px";		// MUST HAVE "px"!!!
@@ -306,7 +306,6 @@ $(document).ready(function() {
 		direction = LEFT;
 		snakeDot();
 		console.log("swipeleft");
-
 	}); 
 	/* */
 	$(document).keyup(function (e) {

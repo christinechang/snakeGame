@@ -4,6 +4,8 @@ html {
 body {
  font-family: "Oleo Script" "Trebuchet MS", Arial, Helvetica, sans-serif;
  position:fixed;
+ margin: 0;	/* explicitly get rid of default margin */
+ padding: 0;  /* explicitly get rid of default margin */
 }
 
 h1, h2 {
@@ -73,14 +75,16 @@ header {text-align: center;
  height:10px;
  background:url(images/egg.jpg);
 }
+#divGameboard {
 
+}
 #gameboard {
  /* playing board boundaries */
  background:url(images/grass.jpg);
  border:5px solid #FFFF00;		/* yellow border */
  white-space:nowrap;
- top: 50px;
- left: 50px;
+ top: 0px;
+ left: 0px;
 }
 body {
  background:url(images/grass.jpg);
