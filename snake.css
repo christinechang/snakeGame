@@ -83,8 +83,8 @@ header {text-align: center;
  background:url(images/grass.jpg);
  border:5px solid #FFFF00;		/* yellow border */
  white-space:nowrap;
- top: 0px;
- left: 0px;
+ top: 0px;			/* at origin - margin and padding set to 0 elsewhere */
+ left: 0px;			/* at origin - margin and padding set to 0 elsewhere */
 }
 body {
  background:url(images/grass.jpg);

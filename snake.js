@@ -6,7 +6,7 @@
 //board constants and variables:
 var origx = 0;	// placement of board
 var origy = 0;
-var SMALLDISPLAY = 800;
+var SMALLDISPLAY = 800;		// to set for mobile and tablet display 
 var windowWidth;
 
 var boardx = 61;	// array size for board for large display
@@ -74,8 +74,8 @@ function snakeDot(){
 		score += 1;
 		play_sound(SNAKE);
 
-}
-function gameOver() {
+}		
+function gameOver() {			// play car crash and announce game over
 	var game_context = game_canvas.getContext("2d");
 	play_sound(GAMEOVER);
 	game_context.save();
@@ -97,7 +97,7 @@ function drawRect(xx,yy,type){
 	game_context.fillStyle = dotcolor[SNAKE]; //reset color to SNAKE
 }
 /* ********draw image  of snake (facing different directions) and food **********************/
-function drawItem(xx,yy,type){
+function drawItem(xx,yy,type){	
 	/* use css to move place item */
 	var item_context,elemCtx;
 	var game_context = game_canvas.getContext("2d");
