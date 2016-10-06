@@ -2,8 +2,9 @@ html {
 	height: 100%;
 	}
 body {
- font-family: "Oleo Script" "Trebuchet MS", Arial, Helvetica, sans-serif;
- position:fixed;
+/* font-family: "Oleo Script" "Trebuchet MS", Arial, Helvetica, sans-serif;
+*/ position:fixed;
+font-family: 'Baloo Da', cursive;
  margin: 0;	/* explicitly get rid of default margin */
  padding: 0;  /* explicitly get rid of default margin */
 }
@@ -13,7 +14,7 @@ h1, h2 {
  font-family: "Trench" "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 header {text-align: center;
-	color: yellow;
+	color: black;
 }
 
 #infoObject {
@@ -80,7 +81,8 @@ header {text-align: center;
 }
 #gameboard {
  /* playing board boundaries */
- background:url(images/grass.jpg);
+ /*background:url(images/grass.jpg);*/
+ background:pink;
  border:5px solid #FFFF00;		/* yellow border */
  white-space:nowrap;
  top: 0px;			/* at origin - margin and padding set to 0 elsewhere */
