@@ -2,12 +2,14 @@
 <html>
 <head>
 <title>Snake</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"> <!--this line to make responsive over various devices -->
 <link rel="stylesheet" type="text/css" href="snake.css" />
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+<link href="https://fonts.googleapis.com/css?family=Baloo+Da" rel="stylesheet"> 
 <script type="text/javascript", src="snake.js">  </script> 
 
 </head>
@@ -22,7 +24,15 @@
 	<div id="infoObject" > </div>
 </div>
 
-<a href="snakeInstructions.html" id="buttonLook" target="_blank">INSTRUCTIONS</a>	
+<!-- <a href="snakeInstructions.html" id="buttonLook" target="_blank">INSTRUCTIONS</a>	 -->
+<button type="button" id= "showInstr" class="buttStyle" onclick = "showInstrs()">Show Instructions</button>	
+
+<button type="button" id= "leftButt" class="buttStyle" onclick = "scrButtonPush('left')"><</button>	
+<button type="button" id= "upButt" class="buttStyle" onclick = "scrButtonPush('up')">^</button>	
+<button type="button" id= "rightButt" class="buttStyle" onclick = "scrButtonPush('right')">></button>	
+<button type="button" id= "downButt" class="buttStyle" onclick = "scrButtonPush('down')">v</button>	
+
+
 	
 <audio id="snakeSound" src="audio/snakeSound.m4a" preload="auto"></audio>
 <audio id="eggSound" src="audio/eggSound.m4a" preload="auto"></audio>
@@ -36,8 +46,31 @@
 <img hidden id="bugObj" src="images/bug.jpg" alt="bug head" height="10" width="10">
 <img hidden id="eggObj" src="images/egg.jpg" alt="egg head" height="10" width="10">
 
-
-
+<div id="instrFrame">
+	<div id="instructions">
+		<div class="closeButt">
+			<button type="button" class = "buttStyle" onclick="hideInstrs()">X</button>
+		</div>
+		<div>
+			<h3> INSTRUCTIONS: </h3>
+		</div>
+			
+		<div style="clear:both;">
+			<strong>MOVING: </strong><br>
+			Use arrow keys on desktop OR touch arrows in mobile display.<br> 
+			When snake goes off board, it appears on opposite side of board.<br><br>
+			<strong>SCORING: </strong><br>
+			Snake starts out with 60 energy units.<br>
+			Each move spends one energy unit.<br>
+			If snake gets to bug, it eats it and gains 25 energy units.  A new bug appears.<br>
+			If snake eats egg, it gains 15 energy units. A new egg appears.<br><br>
+			<strong>OVER: </strong><br>
+			Game is over when snake runs out of energy units or runs into itself.<br><br>
+			<strong>GOAL: </strong><br>
+			Try to get as many energy units as possible. <br><br> 
+		</div>
+	</div>
+</div>	
 </body>
 </html>
 

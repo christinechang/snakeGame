@@ -2,9 +2,9 @@ html {
 	height: 100%;
 	}
 body {
-/* font-family: "Oleo Script" "Trebuchet MS", Arial, Helvetica, sans-serif;
-*/ position:fixed;
-font-family: 'Baloo Da', cursive;
+ /*font-family: "Oleo Script" "Trebuchet MS", Arial, Helvetica, sans-serif;*/
+ font-family: 'Baloo Da', cursive;
+ position:fixed;
  margin: 0;	/* explicitly get rid of default margin */
  padding: 0;  /* explicitly get rid of default margin */
 }
@@ -16,21 +16,49 @@ h1, h2 {
 header {text-align: center;
 	color: black;
 }
-
+.closeButt{
+	top:10px;
+	right:-50px;
+	text-align: center;
+	float:right;
+}
 #infoObject {
 				text-align: center;
 				float: left;
 				width: 50%;
-				color: yellow;
-				font-size:1.5em;
+				color: black;
+				font-size:2.0em;
+				font-weight: bold
 			}
 #instructions { 
+
 				text-align: left;
 				float: right;
-				width: 50%;
-				color: yellow;
-				font-size:1.3 em;
+				color: black;
+				font-size:1.5 em;
+				background-color:rgba(255,255,255,.7);
+				position:absolute;
+				top:0;
+				left:0;
+				width:80%;
+				height:80%;
+				margin: 20px 0 0 20px;
+				z-index: 100;
+				padding:30px;
+				display: block;
 			}
+/** to prevent playing while instrs are up **/
+#instrFrame {	
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index: 90;
+	background-color: rgba(0,0,0,0); 
+	position:absolute;
+	display:block;
+}
+
 /** css class descriptions for ids **/
 #bugObject {
  /* simple box */
@@ -81,8 +109,8 @@ header {text-align: center;
 }
 #gameboard {
  /* playing board boundaries */
- /*background:url(images/grass.jpg);*/
- background:pink;
+ background:url(images/grass.jpg);
+ //background:pink;
  border:5px solid #FFFF00;		/* yellow border */
  white-space:nowrap;
  top: 0px;			/* at origin - margin and padding set to 0 elsewhere */
@@ -92,7 +120,9 @@ body {
  background:url(images/grass.jpg);
 }
 
-#buttonLook {
-   background-color: yellow;
-   text-align: right;
+.buttStyle {
+   background-color: #e0d132;;
+}
+#showInstr {
+	float:right;
 }

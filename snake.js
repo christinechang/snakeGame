@@ -40,6 +40,14 @@ var message = "";
 var ctrX,ctrY;
 
 ///////////////////////////////////////////////////////
+function hideInstrs(){
+	document.getElementById("instructions").style.display = "none";
+	document.getElementById("instrFrame").style.display = "none";
+}
+function showInstrs(){
+	document.getElementById("instructions").style.display = "block";
+	document.getElementById("instrFrame").style.display = "block";
+}
 // using canvas element
 
 // get id of game_canvas and context once.
@@ -180,11 +188,12 @@ function testPosition(xx,yy) {
 function init() {
 	game_canvas = document.getElementById("gameboard");
 	windowWidth = $(window).width(); /*iphone 4 = 980 */
+	// new version - base game board on window width
+	boardx = Math.min( boardx,(Math.floor((windowWidth)/bpix)-1));
+	boardy = Math.min(boardy, Math.floor(($(window).height()-100)/bpix));
+				/* -100 to allow for controls */
+	console.log("board size is " + boardx + " x " + boardy);
 	if (windowWidth <= SMALLDISPLAY) {		/* test for small display and make gameboard full size*/
-		boardx = (Math.floor((windowWidth)/bpix)-1);
-		boardy = Math.floor(($(window).height()-30)/bpix);	/* -30 to allow for instruction link */
-		/*boardy = Math.floor((window.screen.availHeight-10)/bpix);   */
-		origx = origy = 0;
 		document.getElementById("infoObject").style.fontSize="small";
 	}
 
@@ -245,6 +254,38 @@ function play_sound(type) {
 	}
 }
 /* ***************************where things start******************************/
+function scrButtonPush(whichDir) {		//oct2016
+	var process = true;
+	console.log("inbutton");
+	switch (whichDir) {
+			case "left":
+				direction = LEFT;
+				console.log("left");
+				break;
+			case "right":
+				direction = RIGHT;
+				console.log("right");
+
+				break;
+			case "up":
+				direction = UP;
+				console.log("up");
+
+				break;
+			case "down":
+				direction = DOWN;
+				console.log("down");
+
+				break;
+			default: {		/* ignore other keys */
+				process = false;
+			}
+		};
+		if (process) {
+			snakeDot();
+		}
+}
+
 $(document).ready(function() {
 	window.onload = init;
 	// for touch events and mouseclicks
@@ -259,19 +300,19 @@ $(document).ready(function() {
 		else {
 			direction = (deltaY > 0) ? DOWN : UP; 
 		}
-		switch(direction) {
-			case LEFT:
-				console.log("LEFT");
-				break;
-			case RIGHT:
-				console.log("RIGHT");
-				break;
-			case UP:
-				console.log("UP");
-				break;
-			case DOWN:
-				console.log("DOWN");
-		};
+		// switch(direction) {
+		// 	case LEFT:
+		// 		console.log("LEFT");
+		// 		break;
+		// 	case RIGHT:
+		// 		console.log("RIGHT");
+		// 		break;
+		// 	case UP:
+		// 		console.log("UP");
+		// 		break;
+		// 	case DOWN:
+		// 		console.log("DOWN");
+		// };
 		if (gameOn) {
 			snakeDot();
 		}
